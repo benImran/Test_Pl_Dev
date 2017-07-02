@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="passenger")
+ * @ORM\Table(name="spaceship")
  */
 class Spaceship
 {
@@ -17,15 +17,15 @@ class Spaceship
      */
     private $id;
     /**
-     * @ORM\Column(type="string" length=30)
+     * @ORM\Column(type="string", length=30)
      */
     private $name;
     /**
-     * @ORM\Column(type="string" length=30)
+     * @ORM\Column(type="string", length=30)
      */
     private $type;
     /**
-     * @ORM\Column(type="string" length=30)
+     * @ORM\Column(type="string", length=30)
      */
     private $hp;
     /**
