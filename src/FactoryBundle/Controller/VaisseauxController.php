@@ -2,16 +2,23 @@
 
 namespace FactoryBundle\Controller;
 
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
+
 
 class VaisseauxController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/", name="homepage")
      */
-    public function indexAction()
+    public function indexAction(EntityManagerInterface $em)
     {
-        return $this->render('default/index.html.twig');
+        $ves = $em->getRepository('FactoryBundle:Spaceship')
+            ->findAll();
+        return $this->render(
+            'default/index.html.twig', [
+                'ves' => $ves
+        ]);
     }
 }

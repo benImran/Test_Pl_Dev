@@ -1,5 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    hgcjhgvjkhvjh
+    {% for space in ves %}
+        <div>
+            <h1>{{ space.name }}</h1>
+            <span>{{ space.type }}</span>
+        </div>
+    {% endfor %}
 {% endblock %}
