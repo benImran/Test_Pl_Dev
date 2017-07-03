@@ -12,12 +12,13 @@ class VaisseauxController extends Controller
     /**
      * @Route("/", name="homepage")
      */
-    public function indexAction(EntityManagerInterface $em)
+    public function indexAction()
     {
+        $em = $this->getDoctrine()->getManager();
         $ves = $em->getRepository('FactoryBundle:Spaceship')
             ->findAll();
         return $this->render(
-            'default/index.html.twig', [
+            'page/index.html.twig', [
             'ves' => $ves
         ]);
     }
