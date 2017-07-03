@@ -18,7 +18,7 @@ class VaisseauxController extends Controller
             ->findAll();
         return $this->render(
             'default/index.html.twig', [
-                'ves' => $ves
+            'ves' => $ves
         ]);
     }
 }

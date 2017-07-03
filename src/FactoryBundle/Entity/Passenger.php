@@ -24,6 +24,51 @@ class Passenger
     private $name;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isCaptain;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="FactoryBundle\Entity\Spaceship", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $spaceship;
+
+    /**
+     * @return mixed
+     */
+    public function getSpaceship()
+    {
+        return $this->spaceship;
+    }
+
+    /**
+     * @param mixed $spaceship
+     */
+    public function setSpaceship($spaceship)
+    {
+        $this->spaceship = $spaceship;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getisCaptain()
+    {
+        return $this->isCaptain;
+    }
+
+    /**
+     * @param mixed $isCaptain
+     */
+    public function setIsCaptain($isCaptain)
+    {
+        $this->isCaptain = $isCaptain;
+        return $this;
+    }
+
+    /**
      * @return mixed
      */
     public function getName()

@@ -38,6 +38,29 @@ class Spaceship
     private $damages;
 
     /**
+     * @ORM\OneToOne(targetEntity="FactoryBundle\Entity\Shield", cascade={"persist"})
+     */
+    private $shield;
+
+
+    /**
+     * @return mixed
+     */
+    public function getShield()
+    {
+        return $this->shield;
+    }
+
+    /**
+     * @param mixed $shield
+     */
+    public function setShield($shield)
+    {
+        $this->shield = $shield;
+        return $this;
+    }
+
+    /**
      * @return mixed
      */
     public function getId()
