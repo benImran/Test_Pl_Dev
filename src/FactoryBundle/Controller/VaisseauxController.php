@@ -12,6 +12,6 @@ class VaisseauxController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('index.html.twig');
+        return $this->render('default/index.html.twig');
     }
 }
